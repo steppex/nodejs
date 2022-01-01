@@ -1,0 +1,12 @@
+{
+  "name": "huskycli",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@commitlint/config-angular": "^16.0.0",
+    "@types/node": "^17.0.5",
+    "commitlint": "^16.0.1",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3"
+  }
+}

@@ -1,0 +1,61 @@
+/**
+ * This configuration file defines custom commands for the "rush" command-line.
+ * More documentation is available on the Rush website: https://rushjs.io
+ */
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
+  "commands": [
+    {
+      "name": "commitlint",
+      "commandKind": "global",
+      "summary": "commitlint commit msg",
+      "description": "vaild the commit msg for each git commit",
+      "autoinstallerName": "huskycli",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "commitlint"
+    },
+    {
+      "name": "prettier",
+      "commandKind": "global",
+      "summary": "global prettier format all files",
+      "description": "This is an example that format all files for each project",
+      "autoinstallerName": "huskycli",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "pretty-quick --staged"
+    },
+    {
+      "name": "lint-staged",
+      "commandKind": "bulk",
+      "summary": "like npm run lint-staged",
+      "description": "This is an example that run lint-staged for each project",
+      "enableParallelism": false,
+      "ignoreMissingScript": true
+    },
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "like npm run test",
+      "description": "This is an example that run test for each project",
+      "enableParallelism": false,
+      "ignoreMissingScript": true
+    }
+  ],
+  "parameters": [
+    {
+      "parameterKind": "string",
+      "longName": "--config",
+      "description": "A string parameter for the \"commitlint\" command",
+      "associatedCommands": ["commitlint"],
+      "argumentName": "PATH",
+      "required": true
+    },
+    {
+      "parameterKind": "string",
+      "longName": "--edit",
+      "description": "A string parameter for the \"commitlint\" command",
+      "associatedCommands": ["commitlint"],
+      "argumentName": "EDIT_TEXT",
+      "required": true
+    }
+  ]
+}

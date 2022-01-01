@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "✨ root",
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.cwd": "${workspaceFolder}"
+	}
+}
