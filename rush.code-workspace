@@ -3,6 +3,10 @@
 		{
 			"name": "✨ root",
 			"path": "."
+		},
+		{
+			"name": "📦 @justajwolf/body-parser-xml",
+			"path": "packages/body-parser-xml"
 		}
 	],
 	"settings": {

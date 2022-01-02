@@ -54,5 +54,17 @@
   //   "ignoredNpmScopes": ["@types"]
   // },
 
-  "projects": []
+  "projects": [
+    {
+      "packageName": "@justajwolf/body-parser-xml",
+      "projectFolder": "packages/body-parser-xml",
+      "publishFolder": "./dist",
+      "shouldPublish": true
+      // "reviewCategory": "production",
+      // "cyclicDependencyProjects": [
+      //   // "my-toolchain"
+      // ],
+      // "skipRushCheck": false
+    }
+  ]
 }
