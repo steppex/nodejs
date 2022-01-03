@@ -1,0 +1,39 @@
+name: Npm Pkg Publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish-to-npm:
+    environment: NPM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release branch code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Deps
+        run: |
+          DIR=`echo $GITHUB_REF_NAME | awk -F '@' '{print $1}'`
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js install -t @justajwolf/$DIR
+      
+      - name: Run test
+        run: |
+          DIR=`echo $GITHUB_REF_NAME | awk -F '@' '{print $1}'`
+          cd packages/$DIR
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js test
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          DIR=`echo $GITHUB_REF_NAME | awk -F '@' '{print $1}'`
+          cd packages/$DIR
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js build
+          npm publish ./dist
