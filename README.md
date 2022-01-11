@@ -1,7 +1,5 @@
 # Nodejs Packages
 
-## Description
-
 This is a npm pkg repo with a monorepo style, managing packages by rush.
 
 [Rush](https://rushjs.io/) is a tool that makes life easier for JavaScript developers who build and publish many packages from a common Git repo.
@@ -74,4 +72,4 @@ In Workspace, see the explicit pkg vscode config file, like `'[pkg-name]/.vscode
 
 ## License
 
-The Licenses is [MIT](LICENSE).
+The License is [MIT](LICENSE).
