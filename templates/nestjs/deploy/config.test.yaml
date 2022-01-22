@@ -1,0 +1,9 @@
+appName: wechat-be
+port: '3000'
+env: test
+
+serverInfo:
+  appID: xxxxx
+  appSecret: xxxxx
+  token: xxxxx
+  encodingAESKey: xxxxx

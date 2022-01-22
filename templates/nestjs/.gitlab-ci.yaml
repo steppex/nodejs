@@ -1,0 +1,67 @@
+variables:
+  GIT_STRATEGY: none
+  HOST: xxxxxxx
+  PORT: 3000
+  PNAME: http
+  ENV: test
+
+.common-vars: &common_variables_list
+  IMG_TAG: $CI_PROJECT_NAME:$CI_COMMIT_TAG
+  HELM_TEMPLATE: $CI_PROJECT_NAME.deploy.yaml
+
+stages:
+  - build
+  - test
+  - deploy
+
+build-image:
+  stage: build
+  only:
+    - tags
+  tags:
+    - share-runner
+  allow_failure: false
+  variables:
+    <<: *common_variables_list
+  script:
+    - cd /mnt/ci
+    - echo $CI_PROJECT_SSH_URL
+    - if [ ! -d $CI_PROJECT_NAME ]; then git clone $CI_PROJECT_SSH_URL; fi
+    - cd $CI_PROJECT_NAME
+    - if [ $(git tag | grep $CI_COMMIT_TAG) ]; then $(git tag -d $CI_COMMIT_TAG); fi
+    - git fetch --tags
+    - git checkout $CI_COMMIT_TAG
+    - echo $CI_COMMIT_TAG $CI_COMMIT_SHORT_SHA $CI_PROJECT_SSH_URL
+    - |
+      docker build . -t $IMG_TAG \
+      --build-arg COMMIT_SHA=$CI_COMMIT_SHORT_SHA \
+      --build-arg SSH_URL=$CI_PROJECT_SSH_URL \
+      --build-arg ENV=$ENV \
+      --build-arg PORT=$PORT \
+
+deploy-k8s:
+  stage: deploy
+  only:
+    - tags
+  tags:
+    - share-runner
+  allow_failure: false
+  variables:
+    <<: *common_variables_list
+  # when: manual
+  script:
+    - cd /mnt/ci/k8s-apps-manager && git pull
+    - docker images | grep $CI_PROJECT_NAME || echo skip
+    - |
+      helm template $CI_PROJECT_NAME ./helmtpl \
+      -f ./helmtpl/values.yaml \
+      --set ingress.name=$CI_PROJECT_NAME \
+      --set ingress.host=$HOST \
+      --set service.port=$PORT \
+      --set service.protocolName=$PNAME \
+      --set image.repository=$CI_PROJECT_NAME \
+      --set image.tag=$CI_COMMIT_TAG > $HELM_TEMPLATE
+    - cat $HELM_TEMPLATE
+    - kubectl apply -f $HELM_TEMPLATE
+    - sleep 10
+    - kubectl get all -l k8s-app=$CI_PROJECT_NAME
