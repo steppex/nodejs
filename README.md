@@ -1,8 +1,15 @@
 # Nodejs Packages
 
-This is a npm pkg repo with a monorepo style, managing packages by rush.
+This is a repo of npm pkg, with a monorepo style, managing packages by rush.
 
 [Rush](https://rushjs.io/) is a tool that makes life easier for JavaScript developers who build and publish many packages from a common Git repo.
+
+
+## Manifest
+
+Actively, updating...
+
+- `body-parser-xml` : a middleware to parser xml chunk, see [(^_^)](./packages//body-parser-xml/README.md).
 
 ## Initial
 
