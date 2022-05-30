@@ -16,7 +16,7 @@
     "useWorkspaces": true
   },
   "repository": {
-    "url": "https://github.com/justajwolf/nodejs-rush",
+    "url": "https://github.com/justajwolf/nodejs",
     "defaultBranch": "main",
     "defaultRemote": "origin"
   },
@@ -58,6 +58,17 @@
     {
       "packageName": "@justajwolf/body-parser-xml",
       "projectFolder": "packages/body-parser-xml",
+      "publishFolder": "./dist",
+      "shouldPublish": true
+      // "reviewCategory": "production",
+      // "cyclicDependencyProjects": [
+      //   // "my-toolchain"
+      // ],
+      // "skipRushCheck": false
+    },
+    {
+      "packageName": "@justajwolf/clickhouse",
+      "projectFolder": "packages/clickhouse",
       "publishFolder": "./dist",
       "shouldPublish": true
       // "reviewCategory": "production",
