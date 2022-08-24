@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@commitlint/config-angular": "^16.0.0",
-    "@types/node": "^17.0.5",
-    "commitlint": "^16.0.1",
-    "prettier": "^2.5.1",
+    "@commitlint/config-angular": "^17.0.3",
+    "@types/node": "^18.7.12",
+    "commitlint": "^17.0.3",
+    "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3"
   }
 }

@@ -7,6 +7,10 @@
 		{
 			"name": "📦 @justajwolf/body-parser-xml",
 			"path": "packages/body-parser-xml"
+		},
+		{
+			"name": "📦 @justajwolf/clickhouse",
+			"path": "packages/clickhouse"
 		}
 	],
 	"settings": {
