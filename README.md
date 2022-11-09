@@ -1,17 +1,19 @@
-# Nodejs Packages
+# Nodejs
 
-This is a repo of npm pkg, with a monorepo style, managing packages by rush.
+This is a repo of npm pkg, [justajwolf/nodejs](https://github.com/justajwolf/nodejs), with a monorepo style, managing packages by rush.
 
 [Rush](https://rushjs.io/) is a tool that makes life easier for JavaScript developers who build and publish many packages from a common Git repo.
 
-## Manifest
+## Packages Manifest
 
 Actively, updating...
 
-- `body-parser-xml` : a middleware to parser xml chunk, see [(^\_^)](./packages/body-parser-xml/README.md).
-- `clickhouse` : a clickhouse client for nodejs, see [(^\_^)](./packages/clickhouse/README.md).
+- `body-parser-xml` : a middleware to parser xml chunk, see [(^\_^)](https://github.com/justajwolf/nodejs/tree/main/packages/body-parser-xml).
+- `clickhouse` : a clickhouse client for nodejs, see [(^\_^)](https://github.com/justajwolf/nodejs/tree/main/packages/clickhouse).
 
-## Initial
+## About This Repo and Rushjs
+
+### Init
 
 > To setup new repo, please refer to [[->(^\_^)<-](https://rushjs.io/pages/maintainer/setup_new_repo/)]
 
@@ -21,7 +23,7 @@ $ npm install -g @microsoft/rush
 $ npm install -g pnpm
 ```
 
-## Install deps
+### Install Deps
 
 ```bash
 # install all deps in repo.
@@ -36,7 +38,7 @@ $ rush add --caret --dev -p=[pkg-name]
 $ rush update
 ```
 
-## Build
+### Build
 
 ```bash
 # build all pkg in repo
@@ -50,7 +52,7 @@ $ cd [pkg-path]
 $ rushx build
 ```
 
-## Test
+### Test
 
 ```bash
 # test all pkg in repo
@@ -64,7 +66,9 @@ $ cd [pkg-path]
 $ rushx test
 ```
 
-## Developer
+## About Workspace
+
+### Developer
 
 The following is an example that rush is used in combination with vscode.
 
@@ -73,7 +77,7 @@ The following is an example that rush is used in combination with vscode.
 
 In Workspace, u can make the .vscode folder separating into each pkg.
 
-## Debug
+### Debug
 
 In Workspace, see the explicit pkg vscode config file, like `'[pkg-name]/.vscode/launch.json'`.
 
