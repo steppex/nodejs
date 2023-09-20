@@ -5,9 +5,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
   // LTS versions: https://nodejs.org/en/download/releases/ , LTS schedule: https://nodejs.org/en/about/releases/
-  "nodeSupportedVersionRange": ">=14.19.3",
-  "rushVersion": "5.76.1",
-  "pnpmVersion": "6.32.11",
+  "nodeSupportedVersionRange": ">=18.0.0",
+  "rushVersion": "5.107.1",
+  "pnpmVersion": "8.7.6",
   "pnpmOptions": {
     // "pnpmStore": "local",
     "strictPeerDependencies": true,
