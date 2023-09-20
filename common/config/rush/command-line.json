@@ -42,6 +42,15 @@
   ],
   "parameters": [
     {
+        "parameterKind": "string",
+        "longName": "--cwd",
+        "shortName": "-d",
+        "description": "A string parameter for the \"commitlint\" command",
+        "associatedCommands": ["commitlint"],
+        "argumentName": "PATH",
+        "required": false
+      },
+    {
       "parameterKind": "string",
       "longName": "--config",
       "description": "A string parameter for the \"commitlint\" command",

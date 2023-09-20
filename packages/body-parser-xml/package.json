@@ -28,7 +28,7 @@
     "build": "gulp",
     "lint-staged": "lint-staged",
     "lint": "./node_modules/.bin/eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest --detectOpenHandles 2>&1"
+    "test": "jest --no-cache --detectOpenHandles 2>&1"
   },
   "bugs": {
     "url": "https://github.com/justajwolf/nodejs/issues"

@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+if (($# > 0)); then
+    version="$1"
+else
+    version=master
+fi
+
+tip="branch: $version"
+echo $tip
+
+suffix="$version/src/Server/grpc_protos/clickhouse_grpc.proto"
+
+url="https://cdn.jsdelivr.net/gh/ClickHouse/ClickHouse@$suffix"
+echo $url
+
+ref="https://github.com/ClickHouse/ClickHouse/blob/$suffix"
+echo "// $ref" >./src/protos/clickhouse_grpc.proto
+
+curl $url >>./src/protos/clickhouse_grpc.proto
