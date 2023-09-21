@@ -3,79 +3,90 @@
  * For full documentation, please see https://rushjs.io
  */
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  // LTS versions: https://nodejs.org/en/download/releases/ , LTS schedule: https://nodejs.org/en/about/releases/
-  "nodeSupportedVersionRange": ">=18.0.0",
-  "rushVersion": "5.107.1",
-  "pnpmVersion": "8.7.6",
-  "pnpmOptions": {
-    // "pnpmStore": "local",
-    "strictPeerDependencies": true,
-    // "resolutionStrategy": "fast",
-    // "preventManualShrinkwrapChanges": true,
-    "useWorkspaces": true
-  },
-  "repository": {
-    "url": "https://github.com/justajwolf/nodejs",
-    "defaultBranch": "main",
-    "defaultRemote": "origin"
-  },
-  "gitPolicy": {
-    "allowedEmailRegExps": [],
-    "sampleEmail": "mrexample@gmail.com"
-    // "versionBumpCommitMessage": "Bump versions [skip ci]",
-    // "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
-  },
-  "eventHooks": {
-    "preRushInstall": [
-      // "common/scripts/pre-rush-install.js"
-    ],
-    "postRushInstall": [],
-    "preRushBuild": [],
-    "postRushBuild": []
-  },
-  // For more details and instructions, see this article:  https://rushjs.io/pages/advanced/installation_variants/
-  "variants": [],
-
-  // "telemetryEnabled": false,
-  // "hotfixChangeEnabled": false,
-  // "suppressNodeLtsWarning": false,
-  // "ensureConsistentVersions": true,
-  // "projectFolderMinDepth": 2,
-  // "projectFolderMaxDepth": 2,
-  // "allowMostlyStandardPackageNames": true,
-
-  // "approvedPackagesPolicy": {
-  //   "reviewCategories": [
-  //     "production", // projects that ship to production
-  //     "tools",      // non-shipping projects that are part of the developer toolchain
-  //     "prototypes"  // experiments that should mostly be ignored by the review process
-  //   ],
-  //   "ignoredNpmScopes": ["@types"]
-  // },
-
-  "projects": [
-    {
-      "packageName": "@justajwolf/body-parser-xml",
-      "projectFolder": "packages/body-parser-xml",
-      "publishFolder": "./dist",
-      "shouldPublish": true
-      // "reviewCategory": "production",
-      // "cyclicDependencyProjects": [
-      //   // "my-toolchain"
-      // ],
-      // "skipRushCheck": false
+    "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+    // LTS versions: https://nodejs.org/en/download/releases/ , LTS schedule: https://nodejs.org/en/about/releases/
+    "nodeSupportedVersionRange": ">=18.0.0",
+    "rushVersion": "5.107.1",
+    "pnpmVersion": "8.7.6",
+    "pnpmOptions": {
+        // "pnpmStore": "local",
+        "strictPeerDependencies": true,
+        // "resolutionStrategy": "fast",
+        // "preventManualShrinkwrapChanges": true,
+        "useWorkspaces": true
     },
-    {
-      "packageName": "@justajwolf/clickhouse",
-      "projectFolder": "packages/clickhouse",
-      "publishFolder": "./dist",
-      "shouldPublish": true
-      // "reviewCategory": "production",
-      // "cyclicDependencyProjects": [
-      //   // "my-toolchain"
-      // ],
-      // "skipRushCheck": false
-    }
-  ]
+    "repository": {
+        "url": "https://github.com/justajwolf/nodejs",
+        "defaultBranch": "main",
+        "defaultRemote": "origin"
+    },
+    "gitPolicy": {
+        "allowedEmailRegExps": [],
+        "sampleEmail": "mrexample@gmail.com"
+        // "versionBumpCommitMessage": "Bump versions [skip ci]",
+        // "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
+    },
+    "eventHooks": {
+        "preRushInstall": [
+            // "common/scripts/pre-rush-install.js"
+        ],
+        "postRushInstall": [],
+        "preRushBuild": [],
+        "postRushBuild": []
+    },
+    // For more details and instructions, see this article:  https://rushjs.io/pages/advanced/installation_variants/
+    "variants": [],
+
+    // "telemetryEnabled": false,
+    // "hotfixChangeEnabled": false,
+    // "suppressNodeLtsWarning": false,
+    // "ensureConsistentVersions": true,
+    // "projectFolderMinDepth": 2,
+    // "projectFolderMaxDepth": 2,
+    // "allowMostlyStandardPackageNames": true,
+
+    // "approvedPackagesPolicy": {
+    //   "reviewCategories": [
+    //     "production", // projects that ship to production
+    //     "tools",      // non-shipping projects that are part of the developer toolchain
+    //     "prototypes"  // experiments that should mostly be ignored by the review process
+    //   ],
+    //   "ignoredNpmScopes": ["@types"]
+    // },
+
+    "projects": [
+        {
+            "packageName": "@justajwolf/body-parser-xml",
+            "projectFolder": "packages/body-parser-xml",
+            "publishFolder": "./dist",
+            "shouldPublish": true
+            // "reviewCategory": "production",
+            // "cyclicDependencyProjects": [
+            //   // "my-toolchain"
+            // ],
+            // "skipRushCheck": false
+        },
+        {
+            "packageName": "@justajwolf/clickhouse",
+            "projectFolder": "packages/clickhouse",
+            "publishFolder": "./dist",
+            "shouldPublish": true
+            // "reviewCategory": "production",
+            // "cyclicDependencyProjects": [
+            //   // "my-toolchain"
+            // ],
+            // "skipRushCheck": false
+        },
+        {
+            "packageName": "@justajwolf/surfer",
+            "projectFolder": "packages/surfer",
+            "publishFolder": "./dist",
+            "shouldPublish": true
+            // "reviewCategory": "production",
+            // "cyclicDependencyProjects": [
+            //   // "my-toolchain"
+            // ],
+            // "skipRushCheck": false
+        }
+    ]
 }

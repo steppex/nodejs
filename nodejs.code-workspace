@@ -4,6 +4,10 @@
 			"name": "✨ root",
 			"path": "."
 		},
+        {
+			"name": "📦 @justajwolf/surfer",
+			"path": "packages/surfer"
+		},
 		{
 			"name": "📦 @justajwolf/body-parser-xml",
 			"path": "packages/body-parser-xml"
