@@ -24,9 +24,9 @@
       "shellCommand": "pretty-quick --staged"
     },
     {
-      "name": "lint-staged",
+      "name": "lint",
       "commandKind": "bulk",
-      "summary": "like npm run lint-staged",
+      "summary": "like npm run lint",
       "description": "This is an example that run lint-staged for each project",
       "enableParallelism": false,
       "ignoreMissingScript": true

@@ -2,15 +2,51 @@
     "name": "@justajwolf/surfer",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "author": "justajwolf",
+    "keywords": [
+        "ssr",
+        "surfer"
+    ],
+    "module": "commonjs",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib",
+        "src": "src",
+        "types": "types",
+        "test": "test"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "scripts": {
+        "build": "gulp",
+        "lint": "./node_modules/.bin/eslint --fix \"{src,apps,libs,test}/**/*.ts\"",
+        "test": "jest --no-cache --detectOpenHandles 2>&1"
+    },
+    "license": "MIT",
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "test",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.ts$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.ts"
+        ],
+        "testTimeout": 999999999,
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    },
     "devDependencies": {
         "typescript": "~5.2.2",
-        "@types/node": "~20.6.3"
+        "@types/node": "~20.6.3",
+        "jest": "~29.7.0",
+        "eslint": "~8.49.0",
+        "gulp": "~4.0.2",
+        "@typescript-eslint/parser": "~6.7.2",
+        "@typescript-eslint/eslint-plugin": "~6.7.2",
+        "eslint-plugin-prettier": "~5.0.0"
     }
 }
